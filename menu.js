@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: `Meat Lover`,
+    price: 19.99,
+    category: `entree`,
+    popularity: 2,
+    rating: 1,
+    tags: ['No-Olives', 'Extra-Pineapple', 'cut into squares'],
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,6 +51,7 @@
 
 //CODE HERE
 
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +62,7 @@
 
 //CODE HERE
 
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -64,6 +73,10 @@
 
 //CODE HERE
 
+const { name, price, category, popularity, rating, tags} = pizza 
+
+// console.log(`${price}`)
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +86,7 @@
 */
 
 //CODE HERE
-
+ console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -90,6 +103,50 @@
 //CODE HERE
 
 
+const foodArr = [
+    {
+    name: `Pinapple Pizza`,
+    price: 21.23,
+    category: `Specialty`,
+    popularity: 7,
+    rating: 6,
+    tags: ['Pineapple is live', 'Extra-Pineapple', 'Bikini Bottoms'],
+},
+{
+    name: `Vegan Pizza`,
+    price: 24.96,
+    category: `Vegan`,
+    popularity: 6,
+    rating: 5,
+    tags: ['Capital V', 'Spinach', 'no squares here'],
+},
+{
+    name: `Only Olives Pizza`,
+    price: 25.52,
+    category: `People by the Grand Canyon like this`,
+    popularity: 5,
+    rating: 4,
+    tags: ['Yes-Olives', 'Did you say olives', 'open another can of olives', 'favorite'],
+},
+{
+    name: `Cheese Pizza`,
+    price: 26.97,
+    category: `Mostly for Kids`,
+    popularity: 4,
+    rating: 3,
+    tags: ["kids don't eat pizza", 'Mozerlla', 'Add some Swiss too'],
+},
+{
+    name: `Mystery Van Pizza`,
+    price: 27.74,
+    category: `Scooby Pizza`,
+    popularity: 3,
+    rating: 2,
+    tags: ['Are these scooby snacks', 'No, Shaggy, save some', 'We got a speeding ticket', 'favorite'],
+}
+]
+
+// console.log(foodArr)
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -107,6 +164,22 @@
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
+//I'm fairly certain this wasn't the method intended in the instructions
+//However, it returned the items with "favorite, and it works." It's admittedly a little over my skis
+const filteredFood = (foodArr = [], query = '') => {
+    const reg = new RegExp(query, 'i');
+    return foodArr.filter((item) =>{
+        let flag = false;
+        for(prop in item) {
+            if(reg.test(item[prop])){
+                flag = true;
+            }
+        };
+        return flag;
+    });
+};
+
+// console.log(filteredFood(foodArr,'favorite'))
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,6 +222,22 @@
 */
 
 //CODE HERE
+
+/* function filterByProperty (three aruments: 
+property: String rating popularity, or price
+number: compare against number
+type: shoudl be above or below 
+
+use filter method on foodArr:
+in Callback:
+- is type above (if yes, return items)
+- if typs is below, return items below 
+
+
+
+
+*/
+
 
 
 /*
