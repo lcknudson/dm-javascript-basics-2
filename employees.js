@@ -20,6 +20,16 @@
 */
 
 //CODE HERE
+ class Employee {
+    constructor(name, shifts) {
+        this.name = name;
+        this.shifts = shifts;
+    }
+    getSchedule(Employee) {  //These two lines work, but I need to sort out a better call method 
+        console.log(`${this.name} works on ${this.shifts}`)
+
+    }
+}
 
 
 
@@ -35,6 +45,8 @@
 
 //CODE HERE
 
+const empOne = new Employee ('Jess', ['weekday mornings', 'weekday afternoons'])
+
 /*
     Call the `getSchedule` method on the
     `empOne` object.
@@ -42,13 +54,17 @@
 
 //CODE HERE
 
+empOne.getSchedule() /* This didn't seem to be "right", but based on what I can find on the web, 
+I didn't find better method through searching or experimentation */
+
+// getSchedule(empOne) //I don't know why this doesn't work
 
 /*
     Make a copy of the empOne object
     using the spread operator.
     Save it to a variable called `empTwo`.
 
-    Change the name of `empTwo` to 'Nick'.
+    Cha nge the name of `empTwo` to'Nick'.
 
     Hint: you can do this inline with the 
     spread operator or reassign it using 
@@ -57,7 +73,10 @@
 
 //CODE HERE
 
+const empTwo = { ...empOne }
+empTwo.name = 'Nick'
 
+console.log(empTwo)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -84,6 +103,21 @@
 
 //CODE HERE
 
+class Manager extends Employee {
+    constructor( name, shifts, employees){ 
+        super(name, shifts)
+
+        this.employees = employees
+    }
+    getEmployees() {
+        console.log(`${this.name} manages ${this.employees}`)
+    }
+    
+    addEmployee(emp) {
+        Employee.push(emp)
+    }
+
+}
 
 
 /*
