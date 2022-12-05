@@ -37,6 +37,9 @@ const cart = [
 
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
+const summedPrice = cart.reduce((a, c) => a + c.price, 0)
+
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -52,10 +55,14 @@ const cart = [
     Note: the numbers passed in for `tax` will be
     decimals, for example: .06 for a 6% tax.
 */
+const tax = .06
 
 //CODE HERE
 
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    finalTotal = ((cartTotal * tax) + cartTotal) - couponValue
+    return finalTotal
+}
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -80,6 +87,14 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+    Cart Object Properties in numbers:
+    Entrees
+    Appetizers
+    Beverages
+    Coupons
+    Tax
+
+
 */
 
 /*
@@ -88,3 +103,11 @@ const cart = [
 */
 
 //CODE HERE
+
+const cartCheckout = {
+    entrees: 15.00, 
+    appetizer: 14.00,
+    beverages: 7.00,
+    coupon: -35.00,
+    tax: .07
+}
