@@ -102,7 +102,7 @@ console.log(empTwo)
 */
 
 //CODE HERE
-
+//Incomplete 12.05.2022
 class Manager extends Employee {
     constructor( name, shifts, employees){ 
         super(name, shifts)
